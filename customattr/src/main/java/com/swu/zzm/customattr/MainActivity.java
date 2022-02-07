@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
         // 代码创建自定义控件
         PageController pc = new PageController(this);
         // 设置每个点显示的样式
@@ -39,5 +40,7 @@ public class MainActivity extends AppCompatActivity {
         params.addRule(RelativeLayout.CENTER_IN_PARENT);
         // 添加子控件
         rl.addView(pc,params);
+         */
+
     }
 }

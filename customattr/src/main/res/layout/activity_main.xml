@@ -7,4 +7,10 @@
     tools:context=".MainActivity"
     android:id="@+id/root">
 
+    <com.swu.zzm.customattr.PageController
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mPadding="20"
+        app:resourceID="@drawable/dot_shape"
+        app:numberOfPages="5"/>
 </RelativeLayout>

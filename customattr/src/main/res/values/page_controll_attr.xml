@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--声明在那个控件上添加属性-->
+    <declare-styleable name="PageController">
+        <attr name="mPadding" format="integer"/>
+        <attr name="resourceID" format="reference|color"/>
+        <attr name="numberOfPages" format="integer"/>
+    </declare-styleable>
+</resources>

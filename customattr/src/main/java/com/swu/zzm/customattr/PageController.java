@@ -2,6 +2,7 @@ package com.swu.zzm.customattr;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -16,12 +17,10 @@ import androidx.annotation.Nullable;
  */
 public class PageController extends LinearLayout {
     private int numberOfPages;
-
     /**
      * 不同状态下显示的形式和颜色
      */
     public int resourceID;
-
     /**
      *间距
      */
@@ -46,6 +45,23 @@ public class PageController extends LinearLayout {
         super(context, attrs, defStyleAttr);
 
         setOrientation(LinearLayout.HORIZONTAL);
+
+        /**
+         * 将xml里面自定义属性的值去出来
+         */
+        if (attrs != null) {
+            // 从一个资源里面将自定义的所有属性取出来
+            TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.PageController);
+            /**
+             * 1.属性名
+             * 2.默认值
+             */
+            padding = typedArray.getInteger(R.styleable.PageController_mPadding,0);
+            resourceID = typedArray.getResourceId(R.styleable.PageController_resourceID,0);
+            int page = typedArray.getInteger(R.styleable.PageController_numberOfPages,0);
+            // 显示
+            setNumberOfPages(page);
+        }
     }
 
     /**
@@ -76,6 +92,7 @@ public class PageController extends LinearLayout {
             }
 
             // 添加到容器中
+            
             addView(dotView,params);
         }
     }
