@@ -1,2 +1,4 @@
+include ':customattr'
+include ':groupage'
 include ':app'
 rootProject.name = "Java81"
